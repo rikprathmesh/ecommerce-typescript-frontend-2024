@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
-import Loader from "./components/Loader";
-import Header from "./components/Header";
-import { Toaster } from "react-hot-toast";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase";
-import { userExist, userNotExist } from "./redux/reducer/userReducer";
+import { lazy, Suspense, useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "./redux/api/userAPI";
-import { UserReducerInitialState } from "./types/reducer-types";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Loader from "./components/Loader";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { auth } from "./firebase";
+import { getUser } from "./redux/api/userAPI";
+import { userExist, userNotExist } from "./redux/reducer/userReducer";
+import { UserReducerInitialState } from "./types/reducer-types";
 
 
 const Home = lazy(() => import("./pages/Home"));
@@ -57,7 +56,7 @@ const App = () => {
     // here we get the user which is firebase wala user
     onAuthStateChanged(auth, async (user) => {
       if (user) {
-        console.log(user, "51");
+        // console.log(user, "51");
 
         const data = await getUser(user.uid);
         console.log(data, "54");

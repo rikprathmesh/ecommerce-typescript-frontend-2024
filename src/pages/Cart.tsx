@@ -49,7 +49,7 @@ const Cart = () => {
         setIsValidCoupenCode(true);
         dispatch(calculatePrice())
         }).catch((err) => {
-          // console.log(err.response.data.message);
+          console.log(err.response.data.message);
           dispatch(discountApplied(0))
           setIsValidCoupenCode(false);
           dispatch(calculatePrice())
