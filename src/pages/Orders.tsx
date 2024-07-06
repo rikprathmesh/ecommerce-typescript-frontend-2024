@@ -7,9 +7,8 @@ import TableHOC from "../components/admin/TableHOC";
 
 import { Skeleton } from "../components/Loader";
 import { useMyOrdersQuery } from "../redux/api/orderAPI";
-import { CustomError } from "../types/api-types";
-import { UserReducerInitialState } from "../types/reducer-types";
 import { RootState } from "../redux/store";
+import { CustomError } from "../types/api-types";
 
 type DataType = {
   _id: string;

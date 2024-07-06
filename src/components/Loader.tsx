@@ -1,4 +1,3 @@
-import React from "react";
 import loaderIcon from "../assets/loader-img.webp";
 
 const Loader = () => {

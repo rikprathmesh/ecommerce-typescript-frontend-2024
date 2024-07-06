@@ -1,4 +1,3 @@
-import React from "react";
 import { FaPlus } from "react-icons/fa";
 import { server } from "../redux/store";
 import { CartItem } from "../types/types";

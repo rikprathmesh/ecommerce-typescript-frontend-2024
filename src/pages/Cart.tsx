@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { VscError } from "react-icons/vsc";
-import CartItemCard from "../components/CartItemCard";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import CartItemCard from "../components/CartItemCard";
+import { addToCart, calculatePrice, discountApplied, removeCartItem } from "../redux/reducer/cartReducer";
+import { server } from "../redux/store";
 import { CartReducerInitalState } from "../types/reducer-types";
 import { CartItem } from "../types/types";
-import toast from "react-hot-toast";
-import { addToCart, calculatePrice, discountApplied, removeCartItem } from "../redux/reducer/cartReducer";
-import axios from "axios";
-import { server } from "../redux/store";
 
 // const subTotal = 4000;
 // const tax = Math.round(subTotal * 0.18);

@@ -1,6 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { FaTrash } from 'react-icons/fa'
+import { FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { server } from '../redux/store';
 import { CartItem } from '../types/types';
 
@@ -14,7 +13,7 @@ type CartItemProps = {
 
 const CartItemCard = ({cartItem, increamentHandler, decrementHandler, removeHandler}: CartItemProps) => {
 
-    const {productId, photo, name, price, quantity, stock} = cartItem
+    const {productId, photo, name, price, quantity} = cartItem
   return (
     <div className='cart-item'>
       <img src={`${server}/${photo}`} alt="image" />
